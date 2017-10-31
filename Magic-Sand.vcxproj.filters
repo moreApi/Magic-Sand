@@ -106,9 +106,6 @@
     <ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClCompile>
-    <ClCompile Include="NetworkManager.cpp">
-      <Filter>src\Games\SandBuggy</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPClient.cpp">
       <Filter>addons\ofxNetwork\src</Filter>
     </ClCompile>
@@ -120,9 +117,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxUDPManager.cpp">
       <Filter>addons\ofxNetwork\src</Filter>
-    </ClCompile>
-    <ClCompile Include="HeightMapServer.cpp">
-      <Filter>src\Games\SandBuggy</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxOpenCv\src\ofxCvColorImage.cpp">
       <Filter>addons\ofxOpenCv\src</Filter>
@@ -198,6 +192,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxParagraph\src\ofxParagraph.cpp">
       <Filter>addons\ofxParagraph\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Games\HeightMapServer.cpp">
+      <Filter>src\Games</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -299,9 +296,6 @@
     </Filter>
     <Filter Include="addons\ofxXmlSettings\libs">
       <UniqueIdentifier>{687714A8-1662-FA1C-261F-50F0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Games\SandBuggy">
-      <UniqueIdentifier>{d5896e53-c7d4-4463-a8c7-ef60cd4a404e}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxNetwork">
       <UniqueIdentifier>{dd2fcafd-7b41-4171-be56-79b0af6ec7df}</UniqueIdentifier>
@@ -788,9 +782,6 @@
     <ClInclude Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.h">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClInclude>
-    <ClInclude Include="NetworkManager.h">
-      <Filter>src\Games\SandBuggy</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxNetwork.h">
       <Filter>addons\ofxNetwork\src</Filter>
     </ClInclude>
@@ -808,9 +799,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxUDPManager.h">
       <Filter>addons\ofxNetwork\src</Filter>
-    </ClInclude>
-    <ClInclude Include="HeightMapServer.h">
-      <Filter>src\Games\SandBuggy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxOpenCv\src\ofxCvBlob.h">
       <Filter>addons\ofxOpenCv\src</Filter>
@@ -1447,6 +1435,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxParagraph\src\ofxParagraph.h">
       <Filter>addons\ofxParagraph\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Games\HeightMapServer.h">
+      <Filter>src\Games</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include <ofxNetwork.h>
+#include "KinectProjector.h"
 
 class HeightMapServer : public ofThread
 {
@@ -19,7 +20,9 @@ private:
 	string moduleName = "HeightMapServer";
 	int port = 9966; //default port
 	ofxTCPServer server;
+	KinectProjector kinectProjector;
 
 	void listen();
+	char* getHeightData();
 };
 
