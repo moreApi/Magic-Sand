@@ -26,11 +26,12 @@ void ofApp::setup() {
 	ofSetFrameRate(60);
 	ofBackground(0);
 	ofSetVerticalSync(true);
-	ofSetLogLevel(OF_LOG_VERBOSE);
+	//ofSetLogLevel(OF_LOG_VERBOSE);
 	ofSetLogLevel("ofThread", OF_LOG_WARNING);
 	ofSetLogLevel("ofFbo", OF_LOG_ERROR);
 	ofSetLogLevel("ofShader", OF_LOG_ERROR);
 	ofSetLogLevel("ofxKinect", OF_LOG_WARNING);
+	ofSetLogLevel("KinectProjector",OF_LOG_WARNING);
 
 	// Setup kinectProjector
 	kinectProjector = std::make_shared<KinectProjector>(projWindow);
@@ -57,6 +58,9 @@ void ofApp::setup() {
 	boidGameController.setProjectorRes(projRes);
 	boidGameController.setKinectRes(kinectRes);
 	boidGameController.setKinectROI(kinectROI);
+
+	heightMapServer.kinectProjector = kinectProjector;
+	heightMapServer.startThread();
 
 }
 
@@ -250,5 +254,9 @@ void ofApp::gotMessage(ofMessage msg) {
 
 void ofApp::dragEvent(ofDragInfo dragInfo) {
 
+}
+
+void ofApp::exit(){
+	heightMapServer.waitForThread(true,0);
 }
 

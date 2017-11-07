@@ -122,6 +122,11 @@ public:
     ofTexture & getTexture(){
         return FilteredDepthImage.getTexture();
     }
+
+    ofPixels & getPixels(){
+    	return FilteredDepthImage.getPixels();
+    }
+
     ofRectangle getKinectROI(){
         return kinectROI;
     }

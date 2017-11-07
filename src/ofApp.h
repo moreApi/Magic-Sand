@@ -27,6 +27,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #include "SandSurfaceRenderer/SandSurfaceRenderer.h"
 #include "Games/MapGameController.h"
 #include "Games/BoidGameController.h"
+#include "Games/HeightMapServer.h"
 
 class ofApp : public ofBaseApp {
 
@@ -49,6 +50,7 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
+	void exit();
 
 	std::shared_ptr<ofAppBaseWindow> projWindow;
 
@@ -57,6 +59,7 @@ private:
 	SandSurfaceRenderer* sandSurfaceRenderer;
 	CMapGameController mapGameController;
 	CBoidGameController boidGameController;
+	HeightMapServer heightMapServer;
 
 	// Main window ROI 
 	ofRectangle mainWindowROI;
