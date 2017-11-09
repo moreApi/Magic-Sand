@@ -25,14 +25,10 @@ void HeightMapServer::threadedFunction()
 	server.setup(port, true);
 	ofLogVerbose(moduleName) << "server open";
 
-	KinectProjector* kp = kinectProjector.get();
-	ofLogVerbose(moduleName) << "baseplane normal " << kp->getBasePlaneNormal << " baseplane offset" << kp->getBasePlaneOffset;
-
-
-
 	while (isThreadRunning()) {
 		listen();
 	}
+
 	server.close();
 }
 
@@ -90,11 +86,27 @@ char * HeightMapServer::getHeightData()
 	KinectProjector* kp = kinectProjector.get();
 	ofPixels tmpPix = kp->getPixels();
 
+	ofVec3f baseplaneNormal = kp->getBasePlaneNormal();
+	float baseplaneOffset = kp->getBasePlaneOffset().z;
+
 	char* data = new char[480 * 640];
 
-	for (int i = 0; i < 640 * 480; i++) {
-		data[i] = (char)(tmpPix.getData()[i]);
-	}
+
+	for (int y = 0; y < 480; y++) {
+			for (int x = 0; x < 640; x++){
+				int i = y * 640 + x;
+				unsigned char height = tmpPix.getData()[i];
+				if (height == 0 || height == 0){
+					//out of RoI
+					data[i] = 0;
+				} else {
+					//need to add baseplane to height
+					float dist = (baseplaneNormal.x * (x/640.0f) + baseplaneNormal.y * (y/480.0f)) / baseplaneNormal.z;
+					int base = dist * baseplaneOffset /2; //ugly guess but i don't know what the scale of the height values is
+ 					data[i] = (char)(min(height + base,255));
+				}
+			}
+		}
 
 	return data;
 }
