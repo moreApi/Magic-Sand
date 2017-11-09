@@ -1,7 +1,7 @@
 #include "HeightMapServer.h"
 
 /**
-Protocoll
+Protocol
 
 leading byte:
 0 - do nothing
@@ -23,7 +23,7 @@ HeightMapServer::~HeightMapServer()
 void HeightMapServer::threadedFunction()
 {
 	server.setup(port, true);
-	ofLogNotice(moduleName) << "server open";
+	ofLogVerbose(moduleName) << "server open";
 	while (isThreadRunning()) {
 		listen();
 	}
@@ -62,16 +62,16 @@ void HeightMapServer::listen() {
 			break;
 			case 2: //send height data
 			{
-				ofLogNotice(moduleName) << "Height Map request";
-
+				ofLogVerbose(moduleName) << "Height Map request";
+				
 				char* data = getHeightData();
 				server.sendRawBytes(i, data, 640 * 480);
-				ofLogNotice(moduleName) << "Send Height Map";
+				ofLogVerbose(moduleName) << "Send Height Map";
 				delete[] data;
 			}
 			break;
 			default:
-				ofLogNotice(moduleName) << "Received unknown leading byte: " << int(leadingByte);
+				ofLogWarning(moduleName) << "Received unknown leading byte: " << int(leadingByte);
 				//unknown leading byte
 			}
 		}
