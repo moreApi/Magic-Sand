@@ -24,6 +24,12 @@ void HeightMapServer::threadedFunction()
 {
 	server.setup(port, true);
 	ofLogVerbose(moduleName) << "server open";
+
+	KinectProjector* kp = kinectProjector.get();
+	ofLogVerbose(moduleName) << "baseplane normal " << kp->getBasePlaneNormal << " baseplane offset" << kp->getBasePlaneOffset;
+
+
+
 	while (isThreadRunning()) {
 		listen();
 	}
