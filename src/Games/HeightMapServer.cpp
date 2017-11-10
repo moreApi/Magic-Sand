@@ -11,8 +11,7 @@ leading byte:
 
 */
 
-HeightMapServer::HeightMapServer()
-{
+HeightMapServer::HeightMapServer(){
 }
 
 

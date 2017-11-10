@@ -196,6 +196,12 @@
     <ClCompile Include="src\Games\HeightMapServer.cpp">
       <Filter>src\Games</Filter>
     </ClCompile>
+    <ClCompile Include="src\Games\BuggyGameServer.cpp">
+      <Filter>src\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Games\Buggy.cpp">
+      <Filter>src\Games</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -1437,6 +1443,12 @@
       <Filter>addons\ofxParagraph\src</Filter>
     </ClInclude>
     <ClInclude Include="src\Games\HeightMapServer.h">
+      <Filter>src\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Games\BuggyGameServer.h">
+      <Filter>src\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Games\Buggy.h">
       <Filter>src\Games</Filter>
     </ClInclude>
   </ItemGroup>

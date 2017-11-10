@@ -59,7 +59,7 @@ void ofApp::setup() {
 	boidGameController.setKinectRes(kinectRes);
 	boidGameController.setKinectROI(kinectROI);
 
-	heightMapServer.kinectProjector = kinectProjector;
+	heightMapServer.setKinectProjector(kinectProjector);
 	heightMapServer.startThread();
 
 }

@@ -293,6 +293,8 @@ C:\Users\Jan\repos\of_v0.9.8_vs_release\addons\ofxOpenCv\libs\opencv\lib\vs\x64\
     <ClCompile Include="..\..\..\addons\ofxOpenCv\src\ofxCvImage.cpp" />
     <ClCompile Include="..\..\..\addons\ofxOpenCv\src\ofxCvShortImage.cpp" />
     <ClCompile Include="..\..\..\addons\ofxParagraph\src\ofxParagraph.cpp" />
+    <ClCompile Include="src\Games\Buggy.cpp" />
+    <ClCompile Include="src\Games\BuggyGameServer.cpp" />
     <ClCompile Include="src\Games\HeightMapServer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
@@ -545,6 +547,8 @@ C:\Users\Jan\repos\of_v0.9.8_vs_release\addons\ofxOpenCv\libs\opencv\lib\vs\x64\
     <ClInclude Include="..\..\..\addons\ofxOpenCv\src\ofxCvShortImage.h" />
     <ClInclude Include="..\..\..\addons\ofxOpenCv\src\ofxOpenCv.h" />
     <ClInclude Include="..\..\..\addons\ofxParagraph\src\ofxParagraph.h" />
+    <ClInclude Include="src\Games\Buggy.h" />
+    <ClInclude Include="src\Games\BuggyGameServer.h" />
     <ClInclude Include="src\Games\HeightMapServer.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Games\BoidGameController.h" />

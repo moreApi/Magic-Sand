@@ -15,13 +15,17 @@ public:
 
 	void setPort(int portnum) { port = portnum; }
 
-	std::shared_ptr<KinectProjector> kinectProjector;
+	void setKinectProjector(std::shared_ptr<KinectProjector> const& k) {
+		kinectProjector = k;
+	}
+
 
 
 private:
 	string moduleName = "HeightMapServer";
 	int port = 9966; //default port
 	ofxTCPServer server;
+	std::shared_ptr<KinectProjector> kinectProjector;
 
 	void listen();
 	char* getHeightData();
