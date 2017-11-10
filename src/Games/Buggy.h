@@ -20,10 +20,21 @@ public:
 	void draw();
 	void update();
 
-	void setLocation(int x, int y) { location.x = x; location.y = y; }
+	void setLocation(int x, int y) { 
+		if (0 < x < 640 && 0 < y < 480) {
+			location.x = x; 
+			location.y = y;
+			onMap = true;
+		}
+		else {
+			onMap = false;
+		}
+	}
 
 private:
 	std::shared_ptr<KinectProjector> kinectProjector;
+
+	bool onMap = false;
 
 	ofPoint location;
 	ofVec2f projectorCoord;

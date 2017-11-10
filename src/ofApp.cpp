@@ -63,6 +63,7 @@ void ofApp::setup() {
 	heightMapServer.startThread();
 
 	buggyGameServer.setup(kinectProjector);
+	buggyGameServer.startThread();
 
 }
 
@@ -261,6 +262,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo) {
 }
 
 void ofApp::exit(){
-	heightMapServer.waitForThread(true,0);
+	heightMapServer.waitForThread(true, 0);
+	buggyGameServer.waitForThread(true, 0);
 }
 

@@ -14,7 +14,10 @@ Buggy::~Buggy()
 
 void Buggy::draw()
 {
-	float scale = 100;
+	if (!onMap)
+		return;
+
+	float scale = 10;
 
 	ofPushMatrix();
 	ofTranslate(projectorCoord);
@@ -25,7 +28,7 @@ void Buggy::draw()
 	//fish.draw();
 
 
-	c = ofColor(255, 0, 0);
+	c = ofColor(20,20,20);
 	ofSetColor(c);
 	ofFill();
 	ofDrawCircle(0, 0, scale*0.5);

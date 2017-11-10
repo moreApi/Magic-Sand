@@ -96,5 +96,6 @@ void BuggyGameServer::listen()
 }
 
 void BuggyGameServer::setCarPos(int x, int y) {
-	ofLogVerbose(moduleName) << "car at " << x << " " << y;
+	ofLogVerbose(moduleName) << "car at " << x << "," << y;
+	playerCar->setLocation(x, y);
 }
