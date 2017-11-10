@@ -21,7 +21,7 @@ BuggyGameServer::~BuggyGameServer()
 }
 
 void BuggyGameServer::setup(std::shared_ptr<KinectProjector> const& k) {
-	playerCar = new Buggy(k, ofPoint(300, 200));
+	playerCar = new Buggy(k);
 }
 
 void BuggyGameServer::threadedFunction()

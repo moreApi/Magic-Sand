@@ -14,8 +14,7 @@
 class Buggy
 {
 public:
-	Buggy(std::shared_ptr<KinectProjector> const& k,
-		ofPoint slocation);
+	Buggy(std::shared_ptr<KinectProjector> const& k);
 
 	~Buggy();
 

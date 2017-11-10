@@ -48,6 +48,8 @@ void Buggy::draw()
 	ofSetColor(c);
 	ofFill();
 	ofDrawCircle(0, 0, scale*0.25);
+	c = ofColor(255,255,255);
+	ofSetColor(c);
 	ofNoFill();
 	ofPopMatrix();
 
