@@ -14,7 +14,7 @@ Buggy::~Buggy()
 
 void Buggy::draw()
 {
-	float scale = 1;
+	float scale = 100;
 
 	ofPushMatrix();
 	ofTranslate(projectorCoord);
@@ -29,6 +29,8 @@ void Buggy::draw()
 	ofSetColor(c);
 	ofFill();
 	ofDrawCircle(0, 0, scale*0.5);
+	c = ofColor(255,255,255);
+	ofSetColor(c);
 	ofNoFill();
 	ofPopMatrix();
 

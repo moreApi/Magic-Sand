@@ -17,10 +17,11 @@ BuggyGameServer::BuggyGameServer()
 
 BuggyGameServer::~BuggyGameServer()
 {
+	delete playerCar;
 }
 
 void BuggyGameServer::setup(std::shared_ptr<KinectProjector> const& k) {
-	playerCar = new Buggy(k, ofPoint(100, 100));
+	playerCar = new Buggy(k, ofPoint(300, 200));
 }
 
 void BuggyGameServer::threadedFunction()

@@ -62,6 +62,8 @@ void ofApp::setup() {
 	heightMapServer.setKinectProjector(kinectProjector);
 	heightMapServer.startThread();
 
+	buggyGameServer.setup(kinectProjector);
+
 }
 
 
@@ -80,6 +82,7 @@ void ofApp::update() {
 
 	mapGameController.update();
 	boidGameController.update();
+	buggyGameServer.update();
 }
 
 
@@ -94,6 +97,7 @@ void ofApp::draw()
 	{
 		sandSurfaceRenderer->drawMainWindow(x, y, w, h);//400, 20, 400, 300);
 		boidGameController.drawMainWindow(x, y, w, h);
+		buggyGameServer.draw();
 	}
 
 	kinectProjector->drawMainWindow(x, y, w, h);

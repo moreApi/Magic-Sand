@@ -28,6 +28,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #include "Games/MapGameController.h"
 #include "Games/BoidGameController.h"
 #include "Games/HeightMapServer.h"
+#include "Games/BuggyGameServer.h"
 
 class ofApp : public ofBaseApp {
 
@@ -60,6 +61,7 @@ private:
 	CMapGameController mapGameController;
 	CBoidGameController boidGameController;
 	HeightMapServer heightMapServer;
+	BuggyGameServer buggyGameServer;
 
 	// Main window ROI 
 	ofRectangle mainWindowROI;

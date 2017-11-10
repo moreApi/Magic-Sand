@@ -18,6 +18,8 @@ public:
 
 	void setup(std::shared_ptr<KinectProjector> const& k);
 	void threadedFunction();
+	void draw(){playerCar->draw();}
+	void update(){playerCar->update();}
 
 	void setPort(int portnum) { port = portnum; }
 
