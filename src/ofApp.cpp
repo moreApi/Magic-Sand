@@ -32,6 +32,7 @@ void ofApp::setup() {
 	ofSetLogLevel("ofShader", OF_LOG_ERROR);
 	ofSetLogLevel("ofxKinect", OF_LOG_WARNING);
 	ofSetLogLevel("KinectProjector",OF_LOG_WARNING);
+	ofSetLogLevel("HeightMapServer",OF_LOG_WARNING);
 
 	// Setup kinectProjector
 	kinectProjector = std::make_shared<KinectProjector>(projWindow);
@@ -111,6 +112,7 @@ void ofApp::drawProjWindow(ofEventArgs &args)
 		sandSurfaceRenderer->drawProjectorWindow();
 		mapGameController.drawProjectorWindow();
 		boidGameController.drawProjectorWindow();
+		buggyGameServer.draw();
 	}
 	kinectProjector->drawProjectorWindow();
 }

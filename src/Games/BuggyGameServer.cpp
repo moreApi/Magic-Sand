@@ -82,7 +82,6 @@ void BuggyGameServer::listen()
 				int x = data2[0] + data2[1] + data[2];
 				int y = data2[3] + data2[4];
 
-				delete[] data;
 
 				setCarPos(x, y);
 			}

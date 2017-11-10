@@ -8,6 +8,9 @@ So it's easy to do a second in the same direction.
 
 #include "ofMain.h"
 #include <ofxNetwork.h>
+#include <memory>
+#include "KinectProjector.h"
+
 #include "Buggy.h"
 
 class BuggyGameServer : public ofThread

@@ -2,15 +2,31 @@
 
 
 
-Buggy::Buggy(std::shared_ptr<KinectProjector> const & k, ofPoint slocation)
+Buggy::Buggy(std::shared_ptr<KinectProjector> const & k)
 {
 	kinectProjector = k;
-	location = slocation;
+	onMap = false;
+	lastUpdate = clock();
 }
 
 Buggy::~Buggy()
 {
 }
+
+void Buggy::setLocation(int x, int y) {
+		if (0 < x && x < 640 && 0 < y && y < 480) {
+			if(!onMap){
+				currentLocation.x = x;
+				currentLocation.y = y;
+				onMap = true;
+			}
+			targetLocation.x = x;
+			targetLocation.y = y;
+		}
+		else {
+			onMap = false;
+		}
+	}
 
 void Buggy::draw()
 {
@@ -28,17 +44,20 @@ void Buggy::draw()
 	//fish.draw();
 
 
-	c = ofColor(20,20,20);
+	c = ofColor(255,255,255);
 	ofSetColor(c);
 	ofFill();
 	ofDrawCircle(0, 0, scale*0.5);
-	c = ofColor(255,255,255);
-	ofSetColor(c);
 	ofNoFill();
 	ofPopMatrix();
 
 }
 
 void Buggy::update() {
-	projectorCoord = kinectProjector->kinectCoordToProjCoord(location.x, location.y);
+	projectorCoord = kinectProjector->kinectCoordToProjCoord(currentLocation.x,currentLocation.y);
+	float delta = clock()-lastUpdate;
+	ofPoint diff = targetLocation - currentLocation;
+
+
+	lastUpdate = clock();
 }

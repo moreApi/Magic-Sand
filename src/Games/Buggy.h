@@ -7,6 +7,8 @@
 #include "ofxOpenCv.h"
 #include "ofxCv.h"
 
+#include "ctime"
+
 #include "../KinectProjector/KinectProjector.h"
 
 class Buggy
@@ -20,23 +22,17 @@ public:
 	void draw();
 	void update();
 
-	void setLocation(int x, int y) { 
-		if (0 < x < 640 && 0 < y < 480) {
-			location.x = x; 
-			location.y = y;
-			onMap = true;
-		}
-		else {
-			onMap = false;
-		}
-	}
+	void setLocation(int x, int y) ;
 
 private:
 	std::shared_ptr<KinectProjector> kinectProjector;
 
-	bool onMap = false;
+	bool onMap;
 
-	ofPoint location;
+	clock_t lastUpdate;
+
+	ofPoint targetLocation;
+	ofPoint currentLocation;
 	ofVec2f projectorCoord;
 };
 
