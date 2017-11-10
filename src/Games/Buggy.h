@@ -25,11 +25,14 @@ public:
 	void setLocation(int x, int y) ;
 
 private:
+	const float travelTime = 0.40f;
+
 	std::shared_ptr<KinectProjector> kinectProjector;
 
 	bool onMap;
 
 	clock_t lastUpdate;
+	clock_t lastTargetUpdate;
 
 	ofPoint targetLocation;
 	ofPoint currentLocation;
